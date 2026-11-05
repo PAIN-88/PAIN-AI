@@ -8,4 +8,5 @@ pypdf
 python-docx
 openpyxl
 aiosqlite
-sqlalchemy
+sqlalchemy[asyncio]
+greenlet
