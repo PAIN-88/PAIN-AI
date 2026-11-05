@@ -84,13 +84,13 @@ def init_db():
         "waitForAnswer" INTEGER, "isError" INTEGER, "metadata" TEXT, "tags" TEXT,
         "input" TEXT, "output" TEXT, "createdAt" TEXT, "command" TEXT, "start" TEXT,
         "end" TEXT, "generation" TEXT, "showInput" TEXT, "language" TEXT,
-        "indent" INTEGER, "defaultOpen" INTEGER
+        "indent" INTEGER, "defaultOpen" INTEGER, "autoCollapse" INTEGER
     );
     CREATE TABLE IF NOT EXISTS elements (
         "id" TEXT PRIMARY KEY, "threadId" TEXT, "type" TEXT, "url" TEXT,
         "chainlitKey" TEXT, "name" TEXT NOT NULL, "display" TEXT, "objectKey" TEXT,
         "size" TEXT, "page" INTEGER, "language" TEXT, "forId" TEXT, "mime" TEXT,
-        "props" TEXT
+        "props" TEXT, "autoPlay" INTEGER, "playerConfig" TEXT
     );
     CREATE TABLE IF NOT EXISTS feedbacks (
         "id" TEXT PRIMARY KEY, "forId" TEXT NOT NULL, "threadId" TEXT NOT NULL,
@@ -103,6 +103,16 @@ def init_db():
         "thread_id" TEXT PRIMARY KEY, "history" TEXT, "documents" TEXT
     );
     """)
+    # Upgrade older databases: add any columns newer Chainlit versions need
+    needed = {
+        "steps": [("autoCollapse", "INTEGER")],
+        "elements": [("autoPlay", "INTEGER"), ("playerConfig", "TEXT")],
+    }
+    for table, columns in needed.items():
+        existing = {row[1] for row in con.execute(f"PRAGMA table_info({table})")}
+        for name, col_type in columns:
+            if name not in existing:
+                con.execute(f'ALTER TABLE {table} ADD COLUMN "{name}" {col_type}')
     con.commit()
     con.close()
 
