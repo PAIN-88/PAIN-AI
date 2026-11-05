@@ -1,0 +1,19 @@
+
+========== USER INFORMATION REPORT ==========
+
+Name: sudhanshu tripathi
+Age: 22
+Mobile Number: 7376021914
+Email: st7860519@gmail.com
+Location: lucknow
+
+=============== WEATHER REPORT ===============
+
+Current weather in Lucknow, India:
+Temperature: 26.5 °C
+Feels like: 27.5 °C
+Humidity: 62%
+Wind speed: 14.6 km/h
+
+==============================================
+Report Generated Successfully.

@@ -1,0 +1,19 @@
+
+========== USER INFORMATION REPORT ==========
+
+Name: sudhanshu
+Age: 21
+Mobile Number: 7473747475
+Email: st36@gamil.com
+Location: gorakhpur
+
+=============== WEATHER REPORT ===============
+
+Current weather in Gorakhpur, India:
+Temperature: 23.2 °C
+Feels like: 25.2 °C
+Humidity: 89%
+Wind speed: 17.5 km/h
+
+==============================================
+Report Generated Successfully.

@@ -1,0 +1,11 @@
+chainlit
+python-dotenv
+langchain-openai
+langchain-core
+langgraph
+typing-extensions
+pypdf
+python-docx
+openpyxl
+aiosqlite
+sqlalchemy

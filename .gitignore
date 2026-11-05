@@ -1,0 +1,21 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# App data (user accounts, chats and uploaded files)
+chat_history.db
+saved_files/
+.files/
+
+# Chainlit cache
+.chainlit/.langchain.db
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
