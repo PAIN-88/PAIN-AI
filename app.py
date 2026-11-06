@@ -462,19 +462,9 @@ async def setup_chat_settings():
 
 @cl.on_chat_start
 async def start():
-    settings = await setup_chat_settings()
+    await setup_chat_settings()
     cl.user_session.set("conversation_history", [])
     cl.user_session.set("documents", {})
-
-    await cl.Message(
-        content=(
-            f"Hello! You are using **{settings['Model']}**.\n\n"
-            "You can upload **images** and **documents** "
-            "(PDF, DOCX, XLSX, TXT, CSV, JSON, code files...).\n\n"
-            "Your chats are saved in the sidebar, and your history is preserved "
-            "when you switch models."
-        )
-    ).send()
 
 @cl.on_chat_resume
 async def on_chat_resume(thread: ThreadDict):
