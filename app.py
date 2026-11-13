@@ -36,7 +36,6 @@ if not OPENROUTER_API_KEY:
 # Available models
 # -----------------------------------------------------------------------------
 AVAILABLE_MODELS = {
-    "Nemotron Vision (Free)-Image": "nvidia/nemotron-3.5-super-vl",
     "GPT-4o Mini": "openai/gpt-4o-mini",
     "LiquidAI: LFM2.5-2.6B-Coding": "liquid/lfm-2.5-2.6b:free",
     "NVIDIA: Nemotron 3 Nano Omni-Image": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
